@@ -3,273 +3,489 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Troy | Sci-Fi Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Troy Krause - Full-Stack Developer specializing in .NET, C#, and Angular. Building intelligent systems and knowledge engineering solutions." />
+  <meta name="keywords" content="Troy Krause, Full-Stack Developer, .NET, C#, Angular, Web Development, Knowledge Engineering" />
+  <title>Troy Krause | Full-Stack Developer</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic'
-    rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
+  <!--
+    CONFIGURATION
+    GitHub Username: ST10248581
+    LinkedIn: www.linkedin.com/in/troy-krause-2a0324214
+    Email: troyrause07@gmail.com
+  -->
 
-  <div id="appWrapper" class="flex flex-row h-screen w-screen">
-
-    <div id="terminal" class="terminal-overlay terminal-initial">
-      <div class="star shooting-star" style="top: 10%; left: -15%; animation-delay: 0s;"></div>
-      <div class="star shooting-star" style="top: 20%; left: -10%; animation-delay: 3s;"></div>
-      <div class="star shooting-star" style="top: 30%; left: -12%; animation-delay: 6s;"></div>
-
-      <!-- Comets -->
-      <div class="star comet" style="top: 60%; left: -5%; animation-delay: 0s;"></div>
-      <div class="star comet" style="top: 75%; left: -8%; animation-delay: 10s;"></div>
-
-      <!-- Asteroids -->
-      <div class="star asteroid" style="top: 80%; left: 20%; animation-delay: 0s;"></div>
-      <div class="star asteroid" style="top: 50%; left: 50%; animation-delay: 15s;"></div>
-      <div class="star asteroid" style="top: 30%; left: 70%; animation-delay: 25s;"></div>
-
-      <div class="terminal-box">
-        <div id="typedText" class="typed-text"></div>
-        <div class="terminal-input-wrapper">
-          <label for="terminalInput" class="terminal-label">&gt; Enter command to continue</label>
-          <input type="text" id="terminalInput" class="terminal-input" placeholder="e.g. launch" autocomplete="off"
-            autofocus />
-        </div>
-      </div>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">Troy Krause</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <main id="mainContent" class="main-content main-hidden">
+  <div id="appWrapper">
+    <main class="main-content" role="main">
 
-      <div id="terminalImageWrapper" class="header-section">
-
-        <div class="profile-card education-text">
-          <img src="/images/128587213.jpeg" alt="Header Image" class="card-image" />
-          <h4 class="card-subtitle">"Simplicity is the ultimate sophistication." ~ Leonardo da Vinci</h4>
-          <hr>
-          <h3 class="card-title">Socials</h3>
-          <hr>
-          <h3 class="card-title">Links</h3>
-          <hr>
-          <h3 class="card-title">Contact Information</h3>
-          <hr>
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section fade-in-on-scroll">
+        <div class="hero-content">
+          <h1 class="hero-title gradient-text">Troy Krause</h1>
+          <p class="hero-tagline">Full-Stack Developer & Knowledge Engineering Enthusiast</p>
+          <p class="hero-description">
+            Building intelligent systems that transform complex data into actionable insights.
+            Passionate about creating tools that make technology more accessible.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
         </div>
+        <div class="scroll-indicator">
+          <span>Scroll Down</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </section>
 
-        <div>
-          <aside class="notification intro-notification">
-            <div class="notiglow"></div>
-            <div class="notiborderglow"></div>
+      <!-- About Section -->
+      <section id="about" class="section fade-in-on-scroll">
+        <h2 class="section-title">About Me</h2>
 
-            <div class="notibody">
-              <h3 class="notititle">
-                Hi, I’m Troy Krause!
-              </h3>
-
-              <div class="pill pill-intro">🎓 3rd Year Bachelor of Computer Science</div>
-              <div class="pill pill-intro">💻 Full-stack Developer</div>
-
-              <hr class="intro-divider" />
-              <p class="intro-text">
-                I have a passion for knowledge engineering and intelligent systems. I’m driven by curiosity, creative
-                problem-solving, and have a commitment to building tools that make complex ideas more accessible. This
-                portfolio highlights the work, skills, and goals that shape my journey in tech.
-              </p>
-              <hr class="intro-divider" />
-              <h2 class="notititle">
-                Github Statistics:
-              </h2>
-              <div class="github-stats stats-images">
-                <img
-                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=ST10248581&layout=compact&theme=github_dark"
-                  alt="Top Languages" />
-                <img
-                  src="https://github-readme-stats.vercel.app/api?username=ST10248581&show_icons=true&theme=github_dark"
-                  alt="GitHub Stats" />
-                <img src="https://github-readme-activity-graph.vercel.app/graph?username=ST10248581&theme=react-dark"
-                  alt="GitHub Activity Graph" />
-              </div>
+        <div class="about-intro">
+          <div class="profile-image-container">
+            <img src="/images/128587213.jpeg" alt="Troy Krause profile photo" class="profile-image-large" loading="lazy" />
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-number">2+</span>
+              <span class="stat-label">Years Experience</span>
             </div>
-          </aside>
-
+            <div class="stat-card">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">3rd Year</span>
+              <span class="stat-label">Computer Science</span>
+            </div>
+          </div>
         </div>
 
-      </div>
-
-      <hr />
-
-      <section class="section">
-        <h2 class="notititle section-title">About Me:</h2>
-
-        <div class="about-section">
-
-          <div class="card about-text">
-            <h3 class="card-title">Professional Identity</h3>
-            <h4 class="card-subtitle">Passionate Software Developer & Student</h4>
+        <div class="about-cards">
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <h3 class="card-title">Software Developer & Lifelong Learner</h3>
             <p>
-              I am a curious and driven software developer and computer science student passionate about knowledge
-              engineering and building intelligent systems that simplify complex information and make it
-              actionable...
+              Curious and driven computer science student with a passion for knowledge engineering.
+              I combine strong theoretical foundations with hands-on development experience to build
+              intelligent systems that simplify complexity and make information more actionable.
             </p>
           </div>
 
-          <div class="card about-text">
-            <h3 class="card-title">Learning Philosophy</h3>
-            <h4 class="card-subtitle">Continuous Growth & Real-World Impact</h4>
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="card-title">Full-Stack Development</h3>
             <p>
-              Committed to continuous learning, I balance strong theoretical foundations with hands-on development
-              experience...
+              Specializing in .NET/C# backend development and Angular frontend work. I design RESTful APIs,
+              build cloud-native applications on Azure, and create responsive user interfaces. Independent,
+              resilient, and committed to delivering thoughtful, high-quality solutions.
             </p>
           </div>
 
-          <div class="card about-text">
-            <h3 class="card-title">Core Strengths</h3>
-            <h4 class="card-subtitle">Independence, Creativity, and Resilience</h4>
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3 class="card-title">Making Impact Through Technology</h3>
             <p>
-              Independent and resilient, I take pride in delivering thoughtful, high-quality solutions...
+              Driven by the opportunity to solve complex problems and continuously learn. My goal is to
+              contribute to research in knowledge engineering and intelligent systems while building tools
+              that make complex ideas more accessible and actionable for everyone.
             </p>
           </div>
-
-          <div class="card experience-text">
-            <h3 class="card-title">Professional Experience</h3>
-            <h4 class="card-subtitle">Diverse Roles & Skill Development</h4>
-            <p>
-              Over the past two years, I have gained valuable experience in teaching, bar serving, and software
-              development...
-            </p>
-          </div>
-
-          <div class="card skills-text">
-            <h3 class="card-title">Technical Skills</h3>
-            <h4 class="card-subtitle">Programming Languages & Methodologies</h4>
-            <p>
-              I have strong skills in C#, Java, and JavaScript, along with frameworks like Angular and React...
-            </p>
-          </div>
-
-          <div class="card skills-text">
-            <h3 class="card-title">Additional Expertise</h3>
-            <h4 class="card-subtitle">Foundations & Collaboration</h4>
-            <p>
-              I also have foundational knowledge in mobile app development, operating systems, networking basics...
-            </p>
-          </div>
-
-          <div class="card goals-text">
-            <h3 class="card-title">Career Goals</h3>
-            <h4 class="card-subtitle">Research & Advanced Study</h4>
-            <p>
-              What drives me is the opportunity to solve complex problems and continuously learn new technologies...
-            </p>
-          </div>
-
-          <div class="card education-text">
-            <h3 class="card-title">Education & Lifelong Learning</h3>
-            <h4 class="card-subtitle">Formal Studies & Continuous Skill Building</h4>
-            <p>
-              I am currently completing my final year of a Bachelor of Science in Computer Science at Varsity
-              College...
-            </p>
-          </div>
-
         </div>
       </section>
 
-      <hr class="section-divider" />
+      <!-- Skills Section -->
+      <section id="skills" class="section fade-in-on-scroll">
+        <h2 class="section-title">Skills & Technologies</h2>
 
-      <section class="skills-section section">
-        <h2 class="notititle section-title">
-          Skills:
-        </h2>
+        <div class="skills-category">
+          <h3 class="category-title"><i class="fas fa-star"></i> Core Technologies</h3>
+          <div class="pill-container">
+            <div class="pill pill-core" aria-label="Core skill"><i class="fab fa-microsoft"></i> .NET</div>
+            <div class="pill pill-core" aria-label="Core skill"><i class="fas fa-database"></i> Entity Framework</div>
+            <div class="pill pill-core" aria-label="Core skill"><i class="fas fa-server"></i> SQL Server</div>
+            <div class="pill pill-core" aria-label="Core skill"><i class="fab fa-angular"></i> Angular</div>
+            <div class="pill pill-core" aria-label="Core skill"><i class="fas fa-cubes"></i> DevExtreme</div>
+          </div>
+        </div>
 
-        <div class="pill-container skills-pills">
-          <div class="pill pill-core"><i class="fab fa-microsoft"></i> .NET</div>
-          <div class="pill pill-core"><i class="fas fa-database"></i> Entity Framework</div>
-          <div class="pill pill-core"><i class="fas fa-server"></i> SQL Server</div>
-          <div class="pill pill-core"><i class="fab fa-angular"></i> Angular</div>
-          <div class="pill pill-core"><i class="fas fa-cubes"></i> DevExtreme</div>
+        <div class="skills-category">
+          <h3 class="category-title"><i class="fas fa-code-branch"></i> Additional Skills</h3>
+          <div class="pill-container">
+            <div class="pill pill-extra" aria-label="Additional skill"><i class="fas fa-code"></i> C#</div>
+            <div class="pill pill-extra" aria-label="Additional skill"><i class="fab fa-java"></i> Java</div>
+            <div class="pill pill-extra" aria-label="Additional skill"><i class="fab fa-js"></i> TypeScript</div>
+            <div class="pill pill-extra" aria-label="Additional skill"><i class="fab fa-js-square"></i> JavaScript</div>
+            <div class="pill pill-extra" aria-label="Additional skill"><i class="fab fa-react"></i> React</div>
+            <div class="pill pill-extra" aria-label="Additional skill"><i class="fab fa-android"></i> Android</div>
+            <div class="pill pill-extra" aria-label="Additional skill"><i class="fas fa-leaf"></i> MongoDB</div>
+            <div class="pill pill-extra" aria-label="Additional skill"><i class="fas fa-database"></i> Oracle</div>
+            <div class="pill pill-extra" aria-label="Additional skill"><i class="fab fa-bootstrap"></i> Bootstrap</div>
+            <div class="pill pill-extra" aria-label="Additional skill"><i class="fab fa-html5"></i> HTML/CSS</div>
+          </div>
+        </div>
 
-          <div class="pill pill-extra"><i class="fas fa-code"></i> C#</div>
-          <div class="pill pill-extra"><i class="fab fa-java"></i> Java</div>
-          <div class="pill pill-extra"><i class="fab fa-js"></i> TypeScript</div>
-          <div class="pill pill-extra"><i class="fab fa-js-square"></i> JavaScript</div>
-          <div class="pill pill-extra"><i class="fab fa-react"></i> React</div>
-          <div class="pill pill-extra"><i class="fab fa-android"></i> Android (Java/Kotlin)</div>
-          <div class="pill pill-extra"><i class="fas fa-leaf"></i> MongoDB</div>
-          <div class="pill pill-extra"><i class="fas fa-database"></i> Oracle</div>
-          <div class="pill pill-extra"><i class="fab fa-bootstrap"></i> Bootstrap</div>
-          <div class="pill pill-extra"><i class="fab fa-html5"></i> HTML/CSS</div>
-
-          <div class="pill pill-tools"><i class="fab fa-git-alt"></i> Git, GitHub & Actions</div>
-          <div class="pill pill-tools"><i class="fab fa-docker"></i> Docker</div>
-          <div class="pill pill-tools"><i class="fab fa-microsoft"></i> Azure Ecosystem</div>
-          <div class="pill pill-tools"><i class="fas fa-vial"></i> Unit/Integration Testing</div>
+        <div class="skills-category">
+          <h3 class="category-title"><i class="fas fa-toolbox"></i> Tools & Platforms</h3>
+          <div class="pill-container">
+            <div class="pill pill-tools" aria-label="Development tool"><i class="fab fa-git-alt"></i> Git & GitHub Actions</div>
+            <div class="pill pill-tools" aria-label="Development tool"><i class="fab fa-docker"></i> Docker</div>
+            <div class="pill pill-tools" aria-label="Development tool"><i class="fab fa-microsoft"></i> Azure Ecosystem</div>
+            <div class="pill pill-tools" aria-label="Development tool"><i class="fas fa-vial"></i> Unit/Integration Testing</div>
+          </div>
         </div>
       </section>
 
-      <hr class="section-divider" />
-
-      <section class="section">
-
-        <h2 class="notititle section-title">
-          Experience/Education:
-        </h2>
+      <!-- Experience & Education Section -->
+      <section id="experience" class="section fade-in-on-scroll">
+        <h2 class="section-title">Experience & Education</h2>
 
         <div class="timeline">
-          <div class="event">
-            <time>November 2023 - Present</time>
-            <p><strong>The Development Company</strong><br />
-              Junior/Mid-Level Full-Stack Developer (C#/.NET & Angular)<br />
-              Durban, KwaZulu-Natal, South Africa<br />
-              As a Full-Stack Developer, I design, develop, and maintain web applications using the .NET stack and
-              Angular framework. I build backend services with C# and .NET, creating RESTful APIs and integrating
-              databases using SQL Server and Entity Framework. On the frontend, I develop responsive and user-friendly
-              interfaces with Angular and TypeScript. I work with technologies including Git for source control, GitHub
-              Actions and Azure DevOps for CI/CD, and various Azure services such as App Services, Functions, Service
-              Bus, and Azure SQL to build cloud-native applications. Collaborating closely with cross-functional teams,
-              I translate business requirements into efficient technical solutions, while prioritizing code quality,
-              performance, security, and user experience.</p>
+          <div class="timeline-item work">
+            <div class="timeline-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="timeline-content">
+              <time datetime="2023-11" class="timeline-date">November 2023 - Present</time>
+              <h3 class="timeline-title">Junior/Mid-Level Full-Stack Developer</h3>
+              <h4 class="timeline-company">The Development Company</h4>
+              <p class="timeline-location">Durban, KwaZulu-Natal, South Africa</p>
+              <p class="timeline-description">
+                Design, develop, and maintain web applications using the .NET stack and Angular framework.
+                Build backend services with C# and .NET, creating RESTful APIs and integrating databases using
+                SQL Server and Entity Framework. Develop responsive user interfaces with Angular and TypeScript.
+                Work with Azure services (App Services, Functions, Service Bus, Azure SQL) to build cloud-native applications.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">C#</span>
+                <span class="tag">.NET</span>
+                <span class="tag">Angular</span>
+                <span class="tag">Azure</span>
+                <span class="tag">SQL Server</span>
+              </div>
+            </div>
           </div>
 
-          <div class="event">
-            <time>March 2023 - 2024</time>
-            <p><strong>Northlands Bowling Club</strong><br />
-              Bartender<br />
-              Durban, KwaZulu-Natal, South Africa<br />
-              - Monitor inventory to ensure optimal stock levels of beverages, ensuring seamless customer service.<br />
-              - Maintain impeccable cleanliness standards by regularly sanitizing the bar area and glassware.<br />
-              - Provide exceptional customer service by taking orders and catering to individual preferences.<br />
-              - Handle cash transactions accurately, and process payments.</p>
+          <div class="timeline-item work">
+            <div class="timeline-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="timeline-content">
+              <time datetime="2023-03" class="timeline-date">March 2023 - 2024</time>
+              <h3 class="timeline-title">Bartender</h3>
+              <h4 class="timeline-company">Northlands Bowling Club</h4>
+              <p class="timeline-location">Durban, KwaZulu-Natal, South Africa</p>
+              <p class="timeline-description">
+                Provided exceptional customer service, managed inventory, maintained cleanliness standards,
+                and handled cash transactions with accuracy.
+              </p>
+            </div>
           </div>
 
-          <div class="event">
-            <time>December 2022 - February 2023</time>
-            <p><strong>Native Camp</strong><br />
-              Online English Teacher<br />
-              Durban, KwaZulu-Natal, South Africa<br />
-              - Taught English to students of various ages and nationalities.<br />
-              - Assessed students' progress and provided constructive feedback.</p>
+          <div class="timeline-item work">
+            <div class="timeline-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="timeline-content">
+              <time datetime="2022-12" class="timeline-date">December 2022 - February 2023</time>
+              <h3 class="timeline-title">Online English Teacher</h3>
+              <h4 class="timeline-company">Native Camp</h4>
+              <p class="timeline-location">Durban, KwaZulu-Natal, South Africa</p>
+              <p class="timeline-description">
+                Taught English to students of various ages and nationalities. Assessed students' progress
+                and provided constructive feedback.
+              </p>
+            </div>
           </div>
 
-          <div class="event">
-            <time>March 2023 - December 2025</time>
-            <p><strong>Varsity College</strong><br />
-              Bachelor of Information and Computer Sciences, Application Development</p>
+          <div class="timeline-item education">
+            <div class="timeline-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="timeline-content">
+              <time datetime="2023-03" class="timeline-date">March 2023 - December 2025</time>
+              <h3 class="timeline-title">Bachelor of Information and Computer Sciences</h3>
+              <h4 class="timeline-company">Varsity College</h4>
+              <p class="timeline-description">
+                Major: Application Development
+              </p>
+            </div>
           </div>
 
-          <div class="event">
-            <time>January 2018 - December 2022</time>
-            <p><strong>Northwood School</strong><br />
-              Matric</p>
+          <div class="timeline-item education">
+            <div class="timeline-icon">
+              <i class="fas fa-school"></i>
+            </div>
+            <div class="timeline-content">
+              <time datetime="2018-01" class="timeline-date">January 2018 - December 2022</time>
+              <h3 class="timeline-title">Matric</h3>
+              <h4 class="timeline-company">Northwood School</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section fade-in-on-scroll">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A selection of my work showcasing full-stack development and problem-solving</p>
+
+        <div class="projects-grid">
+          <div class="project-card glass-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Enterprise Resource Management System</h3>
+              <p class="project-description">
+                Full-stack web application built with .NET Core, Entity Framework, and Angular. Features include
+                real-time data synchronization, role-based access control, and comprehensive reporting dashboards.
+              </p>
+              <div class="project-tech">
+                <span class="tech-pill">C#</span>
+                <span class="tech-pill">.NET Core</span>
+                <span class="tech-pill">Angular</span>
+                <span class="tech-pill">SQL Server</span>
+                <span class="tech-pill">Azure</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="View live demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <a href="#" class="project-link" aria-label="View GitHub repository"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="project-link" aria-label="Read case study"><i class="fas fa-file-alt"></i> Case Study</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card glass-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fas fa-network-wired"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Knowledge Graph API</h3>
+              <p class="project-description">
+                RESTful API for managing and querying knowledge graphs. Implements graph traversal algorithms and
+                natural language processing for intelligent information retrieval.
+              </p>
+              <div class="project-tech">
+                <span class="tech-pill">C#</span>
+                <span class="tech-pill">.NET Core</span>
+                <span class="tech-pill">MongoDB</span>
+                <span class="tech-pill">Azure Functions</span>
+                <span class="tech-pill">Docker</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="View GitHub repository"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="project-link" aria-label="Read API documentation"><i class="fas fa-book"></i> API Docs</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card glass-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fas fa-palette"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Developer Portfolio Template</h3>
+              <p class="project-description">
+                Modern, responsive portfolio template with dark mode, smooth animations, and accessibility features.
+                Built with vanilla HTML, CSS, and JavaScript for maximum performance.
+              </p>
+              <div class="project-tech">
+                <span class="tech-pill">HTML5</span>
+                <span class="tech-pill">CSS3</span>
+                <span class="tech-pill">JavaScript</span>
+                <span class="tech-pill">GitHub Pages</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="View live demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <a href="#" class="project-link" aria-label="View GitHub repository"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="project-link" aria-label="Read tutorial"><i class="fas fa-graduation-cap"></i> Tutorial</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GitHub Stats Section -->
+      <section id="github" class="section fade-in-on-scroll">
+        <h2 class="section-title">GitHub Statistics</h2>
+        <p class="section-subtitle">My open source contributions and coding activity</p>
+
+        <div class="github-stats-grid">
+          <div class="stat-image-card">
+            <h3>Most Used Languages</h3>
+            <img
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=ST10248581&layout=compact&theme=github_dark"
+              alt="GitHub top languages chart showing ST10248581's most used programming languages"
+              loading="lazy" />
+          </div>
+          <div class="stat-image-card">
+            <h3>Contribution Stats</h3>
+            <img
+              src="https://github-readme-stats.vercel.app/api?username=ST10248581&show_icons=true&theme=github_dark"
+              alt="GitHub contribution statistics for ST10248581 including total commits and pull requests"
+              loading="lazy" />
+          </div>
+          <div class="stat-image-card full-width">
+            <h3>Activity Graph</h3>
+            <img src="https://github-readme-activity-graph.vercel.app/graph?username=ST10248581&theme=react-dark"
+              alt="GitHub activity graph showing ST10248581's contribution history over the past year"
+              loading="lazy" />
           </div>
         </div>
 
-
+        <div class="github-cta">
+          <a href="https://github.com/ST10248581" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fab fa-github"></i> View Full Profile
+          </a>
+        </div>
       </section>
 
-      <hr class="section-divider" />
+      <!-- Contact Section -->
+      <section id="contact" class="section fade-in-on-scroll">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">
+          I'm always interested in hearing about new opportunities, collaborations, or just connecting with fellow developers.
+        </p>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <a href="mailto:troyrause07@gmail.com">troyrause07@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Location</h3>
+                <p>Durban, KwaZulu-Natal, South Africa</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Availability</h3>
+                <p><span class="status-badge">Open to Opportunities</span></p>
+              </div>
+            </div>
+
+            <div class="social-links-large">
+              <a href="https://www.linkedin.com/in/troy-krause-2a0324214" target="_blank" rel="noopener noreferrer" class="social-btn linkedin">
+                <i class="fab fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/ST10248581" target="_blank" rel="noopener noreferrer" class="social-btn github">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-placeholder">
+            <div class="form-placeholder-content">
+              <i class="fas fa-paper-plane"></i>
+              <h3>Contact Form Coming Soon</h3>
+              <p>In the meantime, feel free to reach out via email or connect on LinkedIn!</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3 class="footer-brand">Troy Krause</h3>
+          <p class="footer-tagline">Building the future, one line of code at a time.</p>
+          <p class="footer-copyright">© 2026 Troy Krause. All rights reserved.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/troy-krause-2a0324214" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/ST10248581" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:troyrause07@gmail.com" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+          <div class="footer-status">
+            <span class="status-badge">Available for opportunities</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Built with HTML5, CSS3, and JavaScript</p>
+        <p><a href="https://github.com/ST10248581" target="_blank" rel="noopener noreferrer">View Source on GitHub</a></p>
+      </div>
+    </footer>
 
   </div>
 
