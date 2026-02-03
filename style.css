@@ -843,7 +843,111 @@ body::after {
 }
 
 /* ============================================
-   12. GITHUB STATS SECTION
+   12. BLOG SECTION
+   ============================================ */
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-32);
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.blog-image {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    border-radius: var(--radius-8);
+    margin-bottom: var(--space-20);
+    background: rgba(13, 27, 42, 0.6);
+}
+
+.blog-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-48);
+    color: var(--color-accent-primary);
+    opacity: 0.3;
+}
+
+.blog-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-meta {
+    display: flex;
+    gap: var(--space-16);
+    margin-bottom: var(--space-12);
+}
+
+.blog-date,
+.blog-read-time {
+    font-size: var(--font-size-13);
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.blog-date i,
+.blog-read-time i {
+    color: var(--color-accent-secondary);
+}
+
+.blog-title {
+    font-size: var(--font-size-20);
+    color: var(--color-accent-primary);
+    margin-bottom: var(--space-12);
+}
+
+.blog-excerpt {
+    font-size: var(--font-size-16);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-16);
+    flex: 1;
+    line-height: 1.6;
+}
+
+.blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+    margin-bottom: var(--space-16);
+}
+
+.blog-link {
+    font-size: var(--font-size-14);
+    color: var(--color-accent-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    font-weight: var(--font-medium);
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.blog-link:hover {
+    color: var(--color-text-primary);
+    gap: var(--space-12);
+}
+
+.blog-cta {
+    text-align: center;
+    margin-top: var(--space-48);
+}
+
+/* ============================================
+   13. GITHUB STATS SECTION
    ============================================ */
 
 .github-stats-grid {
@@ -1247,6 +1351,10 @@ body::after {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
+    .blog-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
     .github-stats-grid {
         grid-template-columns: 1fr;
     }
@@ -1347,6 +1455,10 @@ body::after {
     }
 
     .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-grid {
         grid-template-columns: 1fr;
     }
 
