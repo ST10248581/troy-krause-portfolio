@@ -286,5 +286,225 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 }
 
 // ============================================
+// 10. STARFIELD CANVAS
+// ============================================
+
+(function initStarfield() {
+    const canvas = document.getElementById('starfield');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    resize();
+    window.addEventListener('resize', debounce(resize, 200));
+
+    // Galaxy cluster centers (percentage of viewport)
+    const clusters = [
+        { x: 0.85, y: 0.12, r: 0.18 },
+        { x: 0.10, y: 0.45, r: 0.20 },
+        { x: 0.80, y: 0.78, r: 0.15 },
+        { x: 0.45, y: 0.72, r: 0.17 },
+    ];
+
+    // Nebulas with different accent colors
+    const nebulas = [
+        // Amber/gold nebula - top right
+        { x: 0.82, y: 0.10, rx: 0.22, ry: 0.16, angle: 0.3,
+          colors: [[212, 165, 116], [180, 140, 90], [155, 120, 80]] },
+        // Deep blue/teal nebula - left
+        { x: 0.08, y: 0.40, rx: 0.18, ry: 0.25, angle: -0.4,
+          colors: [[80, 140, 200], [60, 120, 180], [100, 160, 210]] },
+        // Purple/violet nebula - bottom right
+        { x: 0.78, y: 0.80, rx: 0.15, ry: 0.12, angle: 0.6,
+          colors: [[160, 100, 200], [140, 80, 180], [180, 120, 210]] },
+        // Rose/pink nebula - bottom center
+        { x: 0.42, y: 0.75, rx: 0.20, ry: 0.13, angle: -0.2,
+          colors: [[200, 100, 130], [180, 80, 120], [170, 110, 140]] },
+        // Emerald/green nebula - top left
+        { x: 0.20, y: 0.15, rx: 0.14, ry: 0.10, angle: 0.5,
+          colors: [[80, 180, 140], [60, 160, 120], [100, 190, 150]] },
+        // Cyan nebula - center right
+        { x: 0.92, y: 0.50, rx: 0.12, ry: 0.18, angle: -0.3,
+          colors: [[80, 170, 210], [60, 150, 200], [100, 185, 220]] },
+    ];
+
+    // Generate stars once
+    const totalStars = 800;
+    const stars = [];
+
+    for (let i = 0; i < totalStars; i++) {
+        let x, y, size, opacity, color;
+
+        // 40% of stars cluster around galaxy centers
+        if (i < totalStars * 0.4) {
+            const cluster = clusters[Math.floor(Math.random() * clusters.length)];
+            // Gaussian-ish distribution around cluster center
+            const angle = Math.random() * Math.PI * 2;
+            const dist = Math.random() * Math.random() * cluster.r;
+            x = cluster.x + Math.cos(angle) * dist;
+            y = cluster.y + Math.sin(angle) * dist;
+            // Cluster stars are bluer and brighter
+            const blue = 200 + Math.floor(Math.random() * 55);
+            const green = 180 + Math.floor(Math.random() * 40);
+            color = `rgba(${150 + Math.floor(Math.random() * 40)}, ${green}, ${blue}, `;
+            size = Math.random() < 0.15 ? 1.5 + Math.random() : 0.5 + Math.random() * 0.8;
+            opacity = 0.5 + Math.random() * 0.5;
+        } else {
+            // Scattered background stars
+            x = Math.random();
+            y = Math.random();
+            color = `rgba(255, 255, 255, `;
+            size = Math.random() < 0.08 ? 1.2 + Math.random() : 0.3 + Math.random() * 0.7;
+            opacity = 0.2 + Math.random() * 0.6;
+        }
+
+        stars.push({
+            x, y, size, opacity, color,
+            twinkleSpeed: 0.5 + Math.random() * 2,
+            twinkleOffset: Math.random() * Math.PI * 2,
+        });
+    }
+
+    function draw(time) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw nebulas with accent colors
+        nebulas.forEach(neb => {
+            const cx = neb.x * canvas.width;
+            const cy = neb.y * canvas.height;
+            const rx = neb.rx * canvas.width;
+            const ry = neb.ry * canvas.height;
+            const r = Math.max(rx, ry);
+
+            ctx.save();
+            ctx.translate(cx, cy);
+            ctx.rotate(neb.angle);
+            ctx.scale(rx / r, ry / r);
+
+            // Layered glow for depth
+            neb.colors.forEach((col, i) => {
+                const layerR = r * (1.2 - i * 0.25);
+                const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, layerR);
+                const alpha = 0.07 - i * 0.015;
+                grad.addColorStop(0, `rgba(${col[0]}, ${col[1]}, ${col[2]}, ${alpha})`);
+                grad.addColorStop(0.3, `rgba(${col[0]}, ${col[1]}, ${col[2]}, ${alpha * 0.6})`);
+                grad.addColorStop(0.6, `rgba(${col[0]}, ${col[1]}, ${col[2]}, ${alpha * 0.2})`);
+                grad.addColorStop(1, 'transparent');
+                ctx.fillStyle = grad;
+                ctx.fillRect(-layerR, -layerR, layerR * 2, layerR * 2);
+            });
+
+            ctx.restore();
+        });
+
+        // Draw stars
+        const t = time * 0.001;
+        stars.forEach(star => {
+            const twinkle = 0.6 + 0.4 * Math.sin(t * star.twinkleSpeed + star.twinkleOffset);
+            const alpha = star.opacity * twinkle;
+            const sx = star.x * canvas.width;
+            const sy = star.y * canvas.height;
+
+            ctx.beginPath();
+            ctx.arc(sx, sy, star.size, 0, Math.PI * 2);
+            ctx.fillStyle = star.color + alpha + ')';
+            ctx.fill();
+        });
+
+        // Draw shooting stars
+        updateShootingStars(time);
+        shootingStars.forEach(s => {
+            if (!s.active) return;
+
+            const progress = (time - s.startTime) / s.duration;
+            if (progress > 1) { s.active = false; return; }
+
+            const x = s.startX + (s.endX - s.startX) * progress;
+            const y = s.startY + (s.endY - s.startY) * progress;
+
+            // Fade in then out
+            const fade = progress < 0.1 ? progress / 0.1
+                       : progress > 0.6 ? (1 - progress) / 0.4
+                       : 1;
+
+            // Draw trail
+            const tailLen = s.tailLength;
+            const angle = Math.atan2(s.endY - s.startY, s.endX - s.startX);
+            const tailX = x - Math.cos(angle) * tailLen;
+            const tailY = y - Math.sin(angle) * tailLen;
+
+            const grad = ctx.createLinearGradient(tailX, tailY, x, y);
+            grad.addColorStop(0, 'rgba(255, 255, 255, 0)');
+            grad.addColorStop(0.7, `rgba(200, 220, 255, ${0.3 * fade})`);
+            grad.addColorStop(1, `rgba(255, 255, 255, ${0.9 * fade})`);
+
+            ctx.beginPath();
+            ctx.moveTo(tailX, tailY);
+            ctx.lineTo(x, y);
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = s.width;
+            ctx.lineCap = 'round';
+            ctx.stroke();
+
+            // Bright head glow
+            ctx.beginPath();
+            ctx.arc(x, y, s.width * 2, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${0.5 * fade})`;
+            ctx.fill();
+        });
+
+        requestAnimationFrame(draw);
+    }
+
+    // Shooting star system
+    const shootingStars = [];
+    let lastSpawn = 0;
+
+    function spawnShootingStar(time) {
+        const angle = (Math.PI / 6) + Math.random() * (Math.PI / 4); // 30-75 degrees
+        const speed = 200 + Math.random() * 300;
+        const duration = 600 + Math.random() * 800;
+        const startX = Math.random() * canvas.width;
+        const startY = Math.random() * canvas.height * 0.5;
+        const dist = speed;
+
+        shootingStars.push({
+            active: true,
+            startTime: time,
+            duration,
+            startX,
+            startY,
+            endX: startX + Math.cos(angle) * dist,
+            endY: startY + Math.sin(angle) * dist,
+            tailLength: 60 + Math.random() * 100,
+            width: 0.8 + Math.random() * 1.2,
+        });
+    }
+
+    function updateShootingStars(time) {
+        // Spawn new ones at random intervals (every 2-5 seconds)
+        if (time - lastSpawn > 2000 + Math.random() * 3000) {
+            // Sometimes spawn 2-3 at once
+            const count = Math.random() < 0.2 ? 2 + Math.floor(Math.random() * 2) : 1;
+            for (let i = 0; i < count; i++) {
+                spawnShootingStar(time + i * 200);
+            }
+            lastSpawn = time;
+        }
+
+        // Clean up inactive
+        for (let i = shootingStars.length - 1; i >= 0; i--) {
+            if (!shootingStars[i].active) shootingStars.splice(i, 1);
+        }
+    }
+
+    requestAnimationFrame(draw);
+})();
+
+// ============================================
 // END OF SCRIPT
 // ============================================
