@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Troy Krause — Independent full-stack developer building custom web applications, business dashboards, APIs and software solutions. Based in Durban, South Africa." />
+  <meta name="keywords"
+    content="Troy Krause, Custom Software, Web Applications, Business Software, .NET, Angular, Freelance Developer, Durban, South Africa" />
+  <title>Troy Krause | Custom Software Development</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+
+<body>
+  <!--
+    CONFIGURATION
+    GitHub Username: ST10248581
+    LinkedIn: www.linkedin.com/in/troy-krause-2a0324214
+    Email: troyrause07@gmail.com
+  -->
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">Troy Krause</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services" class="nav-link">What I Build</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#process" class="nav-link">How I Work</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <div id="appWrapper">
+    <main class="main-content" role="main">
+
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section fade-in-on-scroll">
+        <div class="hero-content">
+          <h1 class="hero-title gradient-text">Troy Krause</h1>
+          <p class="hero-tagline">I build custom software that solves real problems.</p>
+          <p class="hero-description">
+            Web applications, business dashboards, APIs and internal tools —
+            designed, built and deployed by an independent full-stack developer
+            in Durban, South Africa.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary"><i class="fas fa-rocket"></i> Start a Project</a>
+            <a href="#projects" class="btn btn-secondary">See My Work</a>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <span>Scroll Down</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </section>
+
+      <!-- What I Build (Services) -->
+      <section id="services" class="section fade-in-on-scroll">
+        <h2 class="section-title">What I Build</h2>
+        <p class="section-subtitle">Full-stack software solutions tailored to your business</p>
+
+        <div class="about-cards">
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3 class="card-title">Web Applications</h3>
+            <p>
+              Full-stack web apps built with .NET and Angular — from internal business
+              tools to customer-facing platforms, designed for performance and ease of use.
+            </p>
+          </div>
+
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3 class="card-title">Dashboards & Reporting</h3>
+            <p>
+              Interactive dashboards and data grids that turn raw data into clear,
+              actionable insights your team can use every day.
+            </p>
+          </div>
+
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-plug"></i>
+            </div>
+            <h3 class="card-title">APIs & Integrations</h3>
+            <p>
+              RESTful APIs that connect your systems, automate data flow and eliminate
+              the manual copy-paste work between your tools.
+            </p>
+          </div>
+
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h3 class="card-title">Cloud-Native Solutions</h3>
+            <p>
+              Applications built for Azure — scalable, reliable and deployed with
+              automated CI/CD pipelines so updates ship safely.
+            </p>
+          </div>
+
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3 class="card-title">MVPs & Prototypes</h3>
+            <p>
+              Turn your idea into a working product quickly — validate your concept
+              with real users before committing to a full build.
+            </p>
+          </div>
+
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3 class="card-title">Custom Business Tools</h3>
+            <p>
+              Replace spreadsheets and manual processes with purpose-built software
+              that fits the way your team actually works.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Problems I Solve -->
+      <section id="problems" class="section fade-in-on-scroll">
+        <h2 class="section-title">Problems I Solve</h2>
+        <p class="section-subtitle">If any of these sound familiar, I can help</p>
+
+        <div class="about-cards">
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-table"></i>
+            </div>
+            <h3 class="card-title">"We're running everything on spreadsheets"</h3>
+            <p>
+              Complex spreadsheets break, don't scale, and make collaboration painful.
+              I build web apps that replace them with something faster, more reliable
+              and easier to use.
+            </p>
+          </div>
+
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-unlink"></i>
+            </div>
+            <h3 class="card-title">"Our systems don't talk to each other"</h3>
+            <p>
+              When your tools and platforms live in silos, data gets lost and work gets
+              duplicated. I build APIs and integrations that connect everything together.
+            </p>
+          </div>
+
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3 class="card-title">"I have an idea but no developer"</h3>
+            <p>
+              You know what you need but don't have the technical skills to build it.
+              I take ideas from concept to working software — no jargon, no guesswork.
+            </p>
+          </div>
+
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <h3 class="card-title">"We can't see what our data is telling us"</h3>
+            <p>
+              Raw data in databases and files isn't useful until you can see it clearly.
+              I build dashboards that surface the numbers that matter to your business.
+            </p>
+          </div>
+
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3 class="card-title">"Manual processes are slowing us down"</h3>
+            <p>
+              Repetitive tasks eat up time and introduce errors. I build tools that
+              automate workflows so your team can focus on higher-value work.
+            </p>
+          </div>
+
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="card-title">"Our software feels outdated"</h3>
+            <p>
+              Legacy tools that are slow, clunky, or hard to use hold your team back.
+              I modernise applications with current technology and better user experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section fade-in-on-scroll">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">Real problems solved with working software</p>
+
+        <div class="projects-grid">
+          <div class="project-card glass-card">
+            <div class="project-image project-image--iframe">
+              <iframe src="https://night-sky-amber.vercel.app" title="Night Sky - OTP Verification Component preview" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Night Sky — OTP Verification Component</h3>
+              <p class="project-description">
+                A production-ready OTP verification UI that solves the fiddly UX problems most
+                implementations get wrong — auto-advancing inputs, clipboard paste support, clean
+                state management and smooth animations. Built in Angular 17 with dark/light theming
+                and glassmorphism design.
+              </p>
+              <div class="project-tech">
+                <span class="tech-pill">Angular 17</span>
+                <span class="tech-pill">TypeScript</span>
+                <span class="tech-pill">SCSS</span>
+                <span class="tech-pill">RxJS</span>
+                <span class="tech-pill">Vercel</span>
+              </div>
+              <div class="project-links">
+                <a href="https://night-sky-amber.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View live demo"><i class="fas fa-external-link-alt"></i>
+                  Live Demo</a>
+                <a href="https://github.com/ST10248581/night-sky" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View GitHub repository"><i class="fab fa-github"></i>
+                  GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-cta">
+          <p>More projects are in the works. Have something you'd like built?</p>
+          <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section id="process" class="section fade-in-on-scroll">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">A straightforward process from your idea to deployed software</p>
+
+        <div class="process-grid">
+          <div class="process-step glass-card">
+            <span class="step-number">01</span>
+            <h3 class="step-title">Share Your Idea</h3>
+            <p>
+              Tell me about the problem you're trying to solve or the tool you need.
+              No technical knowledge required — just describe what you're dealing with.
+            </p>
+          </div>
+
+          <div class="process-step glass-card">
+            <span class="step-number">02</span>
+            <h3 class="step-title">Plan the Solution</h3>
+            <p>
+              I'll map out the approach — what to build, which technologies fit, and a
+              realistic timeline. You'll know exactly what to expect before any code is written.
+            </p>
+          </div>
+
+          <div class="process-step glass-card">
+            <span class="step-number">03</span>
+            <h3 class="step-title">Build</h3>
+            <p>
+              Development happens in focused sprints with regular check-ins so you can
+              see progress, give feedback and steer the direction as we go.
+            </p>
+          </div>
+
+          <div class="process-step glass-card">
+            <span class="step-number">04</span>
+            <h3 class="step-title">Test & Refine</h3>
+            <p>
+              Thorough testing across devices and scenarios. I fix issues, polish the
+              experience and make sure everything works reliably before launch.
+            </p>
+          </div>
+
+          <div class="process-step glass-card">
+            <span class="step-number">05</span>
+            <h3 class="step-title">Deploy & Support</h3>
+            <p>
+              Your software goes live on reliable cloud infrastructure. I handle deployment
+              and remain available for updates, fixes and new features as your needs evolve.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Section -->
+      <section id="technology" class="section fade-in-on-scroll">
+        <h2 class="section-title">Technology</h2>
+        <p class="section-subtitle">The tools and platforms I use to build reliable software</p>
+
+        <div class="skills-category">
+          <h3 class="category-title"><i class="fas fa-star"></i> Core Stack</h3>
+          <div class="pill-container">
+            <div class="pill pill-core" aria-label="Core technology"><i class="fab fa-microsoft"></i> .NET</div>
+            <div class="pill pill-core" aria-label="Core technology"><i class="fas fa-database"></i> Entity Framework</div>
+            <div class="pill pill-core" aria-label="Core technology"><i class="fas fa-server"></i> SQL Server</div>
+            <div class="pill pill-core" aria-label="Core technology"><i class="fab fa-angular"></i> Angular</div>
+            <div class="pill pill-core" aria-label="Core technology"><i class="fas fa-cubes"></i> DevExtreme</div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="category-title"><i class="fas fa-code-branch"></i> Additional Technologies</h3>
+          <div class="pill-container">
+            <div class="pill pill-extra" aria-label="Additional technology"><i class="fas fa-code"></i> C#</div>
+            <div class="pill pill-extra" aria-label="Additional technology"><i class="fab fa-java"></i> Java</div>
+            <div class="pill pill-extra" aria-label="Additional technology"><i class="fab fa-js"></i> TypeScript</div>
+            <div class="pill pill-extra" aria-label="Additional technology"><i class="fab fa-js-square"></i> JavaScript</div>
+            <div class="pill pill-extra" aria-label="Additional technology"><i class="fab fa-react"></i> React</div>
+            <div class="pill pill-extra" aria-label="Additional technology"><i class="fab fa-android"></i> Android</div>
+            <div class="pill pill-extra" aria-label="Additional technology"><i class="fas fa-leaf"></i> MongoDB</div>
+            <div class="pill pill-extra" aria-label="Additional technology"><i class="fas fa-database"></i> PostgreSQL</div>
+            <div class="pill pill-extra" aria-label="Additional technology"><i class="fas fa-database"></i> Oracle</div>
+            <div class="pill pill-extra" aria-label="Additional technology"><i class="fab fa-bootstrap"></i> Bootstrap</div>
+            <div class="pill pill-extra" aria-label="Additional technology"><i class="fab fa-html5"></i> HTML/CSS</div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="category-title"><i class="fas fa-toolbox"></i> Tools & Platforms</h3>
+          <div class="pill-container">
+            <div class="pill pill-tools" aria-label="Development tool"><i class="fab fa-git-alt"></i> Git & GitHub
+              Actions</div>
+            <div class="pill pill-tools" aria-label="Development tool"><i class="fab fa-docker"></i> Docker</div>
+            <div class="pill pill-tools" aria-label="Development tool"><i class="fab fa-microsoft"></i> Azure Ecosystem
+            </div>
+            <div class="pill pill-tools" aria-label="Development tool"><i class="fas fa-vial"></i> Unit/Integration
+              Testing</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section fade-in-on-scroll">
+        <h2 class="section-title">Who Builds Your Software</h2>
+
+        <div class="about-intro">
+          <div class="profile-image-container">
+            <img src="/images/profile.jpg" alt="Troy Krause" class="profile-image-large" loading="lazy" />
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-number">2+</span>
+              <span class="stat-label">Years Building Software</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">Full-Stack</span>
+              <span class="stat-label">Front to Back</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-cards">
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <h3 class="card-title">Independent Developer & Problem Solver</h3>
+            <p>
+              I'm Troy — a full-stack developer based in Durban, South Africa with a background
+              in computer science and 2+ years of hands-on experience building production web
+              applications. I work directly with you to understand your problem and build
+              software that genuinely solves it.
+            </p>
+          </div>
+
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="card-title">Full-Stack, End to End</h3>
+            <p>
+              I handle the entire stack — from designing the database and building the API
+              in .NET/C#, to crafting the user interface in Angular. One developer, one point
+              of contact, no miscommunication between separate teams.
+            </p>
+          </div>
+
+          <div class="card glass-card">
+            <div class="card-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3 class="card-title">Straightforward & Reliable</h3>
+            <p>
+              I keep things clear and honest — no inflated timelines, no unnecessary complexity.
+              You'll always know where your project stands and what comes next. I'm committed
+              to delivering thoughtful, high-quality work.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Posts Section -->
+      <section id="blog" class="section fade-in-on-scroll">
+        <h2 class="section-title">Blog Posts</h2>
+        <p class="section-subtitle">Thoughts, tutorials, and insights from my development journey</p>
+
+        <div class="blog-grid">
+          <article class="blog-card glass-card">
+            <div class="blog-image project-image--iframe">
+              <iframe src="https://night-sky-amber.vercel.app" title="Night Sky - OTP Component preview" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-date"><i class="fas fa-calendar-alt"></i> March 2026</span>
+                <span class="blog-read-time"><i class="fas fa-clock"></i> 5 min read</span>
+              </div>
+              <h3 class="blog-title">I Spent 6 Hours Building an Angular OTP Component So You Don't Have To</h3>
+              <p class="blog-excerpt">
+                What started as a simple OTP input turned into 6 hours of edge cases — auto-focus, backspace
+                navigation, clipboard paste support, and clean Angular architecture. Sometimes the hardest
+                problems are the small UX details users never notice when they work correctly.
+              </p>
+              <div class="blog-tags">
+                <span class="tech-pill">Angular</span>
+                <span class="tech-pill">Frontend</span>
+                <span class="tech-pill">Side Projects</span>
+                <span class="tech-pill">Web Dev</span>
+              </div>
+              <a href="https://dev.to/troy_krause_68966ef4a217a/i-spent-6-hours-building-an-angular-otp-component-so-you-dont-have-to-500e" class="blog-link" target="_blank" rel="noopener noreferrer">
+                Read on Dev.to <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="blog-cta">
+          <a href="https://dev.to/troy_krause_68966ef4a217a" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fab fa-dev"></i> View All Posts
+          </a>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section fade-in-on-scroll">
+        <h2 class="section-title">Let's Build Something</h2>
+        <p class="section-subtitle">
+          Have an idea, a problem, or a project in mind? I'd love to hear about it.
+          No technical knowledge needed — just tell me what you're trying to achieve.
+        </p>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <a href="mailto:troyrause07@gmail.com">troyrause07@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Location</h3>
+                <p>Durban, KwaZulu-Natal, South Africa</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Availability</h3>
+                <p><span class="status-badge">Available for Projects</span></p>
+              </div>
+            </div>
+
+            <div class="social-links-large">
+              <a href="https://www.linkedin.com/in/troy-krause-2a0324214" target="_blank" rel="noopener noreferrer"
+                class="social-btn linkedin">
+                <i class="fab fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/ST10248581" target="_blank" rel="noopener noreferrer"
+                class="social-btn github">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-placeholder">
+            <div class="form-placeholder-content">
+              <i class="fas fa-paper-plane"></i>
+              <h3>Start a Conversation</h3>
+              <p>
+                Drop me an email with a quick description of what you need — the problem
+                you're solving, who it's for, and any ideas you have. I'll get back to you
+                within 24 hours.
+              </p>
+              <a href="mailto:troyrause07@gmail.com?subject=Project%20Enquiry&body=Hi%20Troy%2C%0A%0AI%20have%20a%20project%20I'd%20like%20to%20discuss.%0A%0AThe%20problem%20I'm%20trying%20to%20solve%3A%0A%0AWho%20it's%20for%3A%0A%0AAny%20ideas%20or%20requirements%3A%0A%0AThanks!" class="btn btn-primary contact-cta-btn">
+                <i class="fas fa-envelope"></i> Send an Enquiry
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3 class="footer-brand">Troy Krause</h3>
+          <p class="footer-tagline">Building software that solves real problems.</p>
+          <p class="footer-copyright">&copy; 2026 Troy Krause. All rights reserved.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#services">What I Build</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#process">How I Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/troy-krause-2a0324214" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn profile">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/ST10248581" target="_blank" rel="noopener noreferrer"
+              aria-label="GitHub profile">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:troyrause07@gmail.com" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+          <div class="footer-status">
+            <span class="status-badge">Available for projects</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Built with HTML5, CSS3, and JavaScript</p>
+        <p><a href="https://github.com/ST10248581" target="_blank" rel="noopener noreferrer">View Source on GitHub</a>
+        </p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

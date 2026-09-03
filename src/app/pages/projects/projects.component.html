@@ -1,0 +1,59 @@
+<section class="section" appFadeIn>
+  <h2 class="section-title">Projects</h2>
+  <p class="section-subtitle">Real problems solved with working software</p>
+
+  <div class="section-intro">
+    <p>
+      I believe the best way to show what I can do is to show what I've actually built.
+      Each project here started with a specific problem or challenge and ended with
+      working software that addresses it. I care about the details — the edge cases
+      most people overlook, the small UX touches that make something feel polished,
+      and the architecture underneath that keeps things maintainable.
+    </p>
+    <p>
+      This section will continue to grow as I ship more work. In the meantime, the
+      project below gives you a sense of how I approach building things — with attention
+      to both the technical foundation and the user experience on top.
+    </p>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card glass-card">
+      <div class="project-image project-image--iframe">
+        <iframe src="https://night-sky-amber.vercel.app" title="Night Sky - OTP Verification Component preview" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Night Sky — OTP Verification Component</h3>
+        <p class="project-description">
+          A production-ready OTP verification UI that solves the fiddly UX problems most
+          implementations get wrong — auto-advancing inputs, clipboard paste support, clean
+          state management and smooth animations. Built in Angular 17 with dark/light theming
+          and glassmorphism design.
+        </p>
+        <p class="project-description">
+          This project came out of a real frustration: most OTP input components feel broken.
+          Backspace doesn't work the way you expect, pasting a code from your clipboard fails,
+          and the focus jumps around unpredictably. I spent six hours getting every edge case
+          right so the experience feels seamless — the kind of detail that users never notice
+          when it works, but immediately notice when it doesn't.
+        </p>
+        <div class="project-tech">
+          <span class="tech-pill">Angular 17</span>
+          <span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">SCSS</span>
+          <span class="tech-pill">RxJS</span>
+          <span class="tech-pill">Vercel</span>
+        </div>
+        <div class="project-links">
+          <a href="https://night-sky-amber.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View live demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/ST10248581/night-sky" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View GitHub repository"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-cta">
+    <p>More projects are in the works. Have something you'd like built?</p>
+    <a routerLink="/contact" class="btn btn-primary">Start a Conversation</a>
+  </div>
+</section>
