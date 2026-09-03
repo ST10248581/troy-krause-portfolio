@@ -1183,8 +1183,27 @@ body::before {
    11d. CONTACT CTA BUTTON
    ============================================ */
 
-.contact-cta-btn {
+.btn-enquiry {
     margin-top: var(--space-24);
+    padding: var(--space-16) var(--space-32);
+    font-size: var(--font-size-16);
+    font-weight: var(--font-medium);
+    background: var(--color-accent-primary);
+    color: var(--color-bg-primary);
+    border: none;
+    border-radius: var(--radius-8);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-enquiry:hover {
+    background: var(--color-accent-tertiary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
 }
 
 /* ============================================
@@ -1467,7 +1486,7 @@ body::before {
     text-align: center;
 }
 
-.form-placeholder-content i {
+.form-placeholder-content > i {
     font-size: var(--font-size-48);
     color: var(--color-accent-primary);
     opacity: 0.5;
