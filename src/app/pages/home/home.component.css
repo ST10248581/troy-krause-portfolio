@@ -1,1 +1,16 @@
 /* Home/Hero styles are handled by global styles.css */
+
+.employ-section {
+  text-align: center;
+}
+
+.employ-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.employ-cta .btn i {
+  margin-right: 0.5rem;
+}
